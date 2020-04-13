@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>{% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Revam</title>
+      <style>
+          .navbar{
+              background-color: crimson;
+
+          }
+          .jumbotron{
+              background-color: #ffffff;
+          }
+          a{
+              color: #ffffff;
+          }
+          .card{
+              border: 1px solid red;
+              background-color: #dc1639;
+
+          }
+          .h-100{
+              height: 80%; !important;
+          }
+          .card-img-top{
+              border-bottom: 1px solid red;
+
+          }
+          .btn-secondary{
+              color: red;
+              background-color: #fff;
+              border-color: red;
+
+          }
+           .btn-primary{
+              background-color: #dc1639;
+              border: 1px solid white;
+
+
+          }
+          .btn:hover{
+              background-color: #dc1639;
+              border-color: #ffffff;
+          }
+          .prc{
+              padding-left: 0%;
+              font-style: italic;
+          }
+          .bg-dark{
+              background-color: #dc1639 !important;
+          }
+          .dropdown-item:hover{
+              background-color: brown;
+              opacity: 0.6;;
+          }
+          .nav-item:hover{
+              background-color: brown;
+              opacity: 0.6;
+          }
+          .navbar-brand{
+              color: white !important;
+          }
+          .crt{
+              padding-left: 50px;
+          }
+          .jumbotron-fluid{
+              background-color: crimson;
+              color: white;
+              height: 100%;
+
+          }
+          .image-field{
+              height: 150%;
+          }
+
+
+
+
+
+
+
+      </style>
+  </head>
+  <body>
+   <!--navbar start here-->
+   <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+   <a class="navbar-brand" href="#">
+    <img src="{% static 'Shop/logo.svg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+    Revam
+  </a>
+       <div class="crt">
+       <button type="button" class="btn btn-secondary mx-2" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus.">
+  Cart(<span id="cart">0</span>)
+</button>
+       </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon">
+    </span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+          <a class="nav-link" href="#" style="color: white">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: white">Charity</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+          Shop-categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #dc1639">
+          <a class="dropdown-item" href="{% url 'Fruit_page' %}" style="color: white">Fruits</a>
+          <a class="dropdown-item" href="{% url 'Vegetables_page' %}" style="color: white">Vegetables</a>
+          <a class="dropdown-item" href="{% url 'Grocery_page' %}"style="color: white">Grocery</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color: white" href="{% url 'vendors' %}">Near shops</a>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+   <!-- navbar end-->
+
+   <!-- categories start -->
+<div class="jumbotron">
+    <div class="jum2>">
+      <button type="button" class="btn btn-danger">Shop By Category<svg class="bi bi-chevron-double-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L9.293 8 3.646 2.354a.5.5 0 010-.708z" clip-rule="evenodd"/>
+  <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L13.293 8 7.646 2.354a.5.5 0 010-.708z" clip-rule="evenodd"/>
+</svg></button></div>
+<div class="row row-cols-1 row-cols-md-3 my-2" >
+     <div class="col mb-4">
+    <div class="card h-100">
+        <div class="image-field">
+      <img src="{% static 'Shop/rsz_2grcu.jpg' %}" class="card-img-top" alt="..." height="100%">
+        </div>
+           <a type="button" class="btn btn-primary" href="{% url 'Grocery_page' %}" >Grocery</a>
+        </div>
+    </div>
+  <div class="col mb-4">
+    <div class="card h-100">
+        <div class="image-field">
+      <img src="{% static 'Shop/rsz_fruits_sub_final.jpg' %}" class="card-img-top" alt="..." height="100%">
+        </div>
+           <a type="button" class="btn btn-primary" href="{% url 'Fruit_page' %}" >Fruits</a>
+        </div>
+    </div>
+    <div class="col mb-4">
+    <div class="card h-100">
+        <div class="image-field">
+      <img src="{% static 'Shop/vg2.jpg' %}" class="card-img-top" alt="..." height="100%" width="100%">
+        </div>
+           <a type="button" class="btn btn-primary" href="{% url 'Vegetables_page' %}" >Vegetables</a>
+        </div>
+    </div>
+</div>
+
+<a type="button" class="btn btn-danger" href="{% url 'Fruit_page' %}">MORE FRUITS <svg class="bi bi-chevron-double-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L9.293 8 3.646 2.354a.5.5 0 010-.708z" clip-rule="evenodd"/>
+  <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L13.293 8 7.646 2.354a.5.5 0 010-.708z" clip-rule="evenodd"/>
+</svg></a>
+<div class="row row-cols-1 row-cols-md-3">
+    {% for i in fruit|slice:":3" %}
+  <div class="col mb-4">
+    <div class="card h-100">
+        <div class="image-field">
+            <img src="/media/{{ i.image }}" class="card-img-top" alt="..." height="100%">
+        </div>
+        <button type="button" class="btn btn-primary" id="namepr{{ i.id }}">{{ i.product_name }}</button>
+           <div id="divpr{{ i.id }}" class="divpr" >
+           <button id="pr{{ i.id }}" class="btn btn-secondary cart">Buy</button><a class="prc" style="color: white">&#8377;<span id="pricepr{{ i.id }}">{{ i.price }}</span>/-</a>
+           </div>
+    </div>
+  </div>
+    {% endfor %}
+</div>
+
+
+<a type="button" class="btn btn-danger" href="{% url 'Vegetables_page' %}">MORE VEGETABLES<svg class="bi bi-chevron-double-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L9.293 8 3.646 2.354a.5.5 0 010-.708z" clip-rule="evenodd"/>
+  <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L13.293 8 7.646 2.354a.5.5 0 010-.708z" clip-rule="evenodd"/>
+</svg></a>
+<div class="row row-cols-1 row-cols-md-3">
+    {% for i in elc|slice:":3" %}
+  <div class="col mb-4">
+    <div class="card h-100">
+        <div class="image-field">
+      <img src="/media/{{ i.image }}" class="card-img-top" alt="..." height="100%">
+        </div>
+           <button type="button" class="btn btn-primary" id="namepr{{ i.id }}">{{ i.product_name }}</button>
+           <div id="divpr{{ i.id }}" class="divpr" >
+           <button id="pr{{ i.id }}" class="btn btn-secondary cart">Buy</button><a class="prc" style="color: white">&#8377;<span id="pricepr{{ i.id }}">{{ i.price }}</span>/-</a>
+
+        </div>
+    </div>
+  </div>
+    {% endfor %}
+</div>
+
+
+<a type="button" class="btn btn-danger" href="{% url 'Grocery_page' %}">MORE GROCERY <svg class="bi bi-chevron-double-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L9.293 8 3.646 2.354a.5.5 0 010-.708z" clip-rule="evenodd"/>
+  <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L13.293 8 7.646 2.354a.5.5 0 010-.708z" clip-rule="evenodd"/>
+</svg></a>
+<div class="row row-cols-1 row-cols-md-3">
+    {% for i in grocer|slice:":3" %}
+  <div class="col mb-4">
+    <div class="card h-100">
+        <div class="image-field">
+      <img src="/media/{{ i.image }}" class="card-img-top" alt="..." height="100%">
+        </div>
+           <button type="button" class="btn btn-primary" id="namepr{{ i.id }}">{{ i.product_name }}</button>
+           <div id="divpr{{ i.id }}" class="divpr" >
+           <button id="pr{{ i.id }}" class="btn btn-secondary cart">Buy</button><a class="prc" style="color: white">&#8377;<span id="pricepr{{ i.id }}">{{ i.price }}</span>/-</a>
+
+        </div>
+    </div>
+  </div>
+    {% endfor %}
+</div>
+</div>
+   <!-- Footer -->
+<footer>
+    <div class="jumbotron-fluid">
+    <h1 class="display-4">About us</h1>
+    <h4>Founder&Ceo:-Deepak Puri Goswami</h4>
+    <p class="lead">Revam pvt. ltd</p>
+    <p class="lead">Contact:-9039918690</p>
+    <p class="lead">Hoshangabad M.P 461001</p>
+         <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/">Revam.com private Ltd..</a>
+  </div>
+</div>
+</footer>
+<!-- Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+       <script>
+if (localStorage.getItem('cart') == null) {
+    var cart = {};
+} else {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    updateCart(cart);
+
+}
+// If the add to cart button is clicked, add/increment the item
+//$('.cart').click(function() {
+$('.divpr').on('click', 'button.cart', function () {
+    var idstr = this.id.toString();
+    if (cart[idstr] != undefined) {
+        qty = cart[idstr][0] + 1;
+    } else {
+        qty = 1;
+        nam = document.getElementById('name' + idstr).innerHTML;
+        price = document.getElementById('price' + idstr).innerHTML;
+        cart[idstr] = [qty, nam, price];
+
+
+
+    }
+    updateCart(cart);
+
+});
+//Add Popover to cart
+$('#popcart').popover();
+updatepopover(cart)
+
+
+function updatepopover() {
+        var popStr ="";
+    popStr = popStr + "<h5>cart for your item in my cart</h5>";
+    var i = 1;
+    for (var item in cart){
+        popStr = popStr + "<b>" + i + "</b>. ";
+        popStr = popStr + document.getElementById('name' + item).innerHTML +  "Qty: " + cart[item][0]+  '<br>';
+        i = i + 1;
+
+    }
+    popStr = popStr + "</div> <a href = '/Shop/checkout'><button class='btn btn-secondary cart' id='Checkout'>Checkout</button></a> <button class='btn btn-secondary cart' onclick='clearcart()' id='clearcart'>Clearcart</button>"
+    console.log(popStr)
+    document.getElementById('popcart').setAttribute('data-content', popStr);
+    $('#popcart').popover('toggle');
+    $('#popcart').popover('toggle');
+
+}
+// clear cart
+
+function clearcart() {
+    cart =JSON.parse(localStorage.getItem('cart'));
+    for (var item in cart){
+
+        document.getElementById('div' + item).innerHTML = '<button id="' + item + '" class="btn btn-secondary cart">Buy</button>'
+    }
+    localStorage.clear();
+    cart = {}
+    updateCart(cart);
+
+}
+
+function updateCart(cart) {
+    var sum = 0;
+    for (var item in cart) {
+        sum = sum + cart[item][0];
+        document.getElementById('div' + item).innerHTML = "<button id='minus" + item + "' class='btn btn-primary minus'>-</button> <span id='val" + item + "''>" + cart[item][0] + "</span> <button id='plus" + item + "' class='btn btn-primary plus'> + </button>";
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    document.getElementById('cart').innerHTML = sum;
+    console.log(cart);
+    updatepopover(cart);
+}
+// If plus or minus button is clicked, change the cart as well as the display value
+$('.divpr').on("click", "button.minus", function() {
+    a = this.id.slice(7, );
+    cart['pr' + a][0] = cart['pr' + a][0] - 1;
+    cart['pr' + a][0] = Math.max(0, cart['pr' + a][0]);
+    document.getElementById('valpr' + a).innerHTML = cart['pr' + a][0];
+    if(cart['pr' + a][0]==0){
+        document.getElementById('divpr' + a).innerHTML = `<button id="' + a + '" class="btn btn-secondary cart">Buy</button>`
+        delete cart['pr' + a];
+    }
+    else {
+        document.getElementById('valpr' + a).innerHTML = cart['pr' + a][0];
+    }
+    updateCart(cart);
+});
+$('.divpr').on("click", "button.plus", function() {
+    a = this.id.slice(6, );
+    cart['pr' + a][0] = cart['pr' + a][0] + 1;
+    document.getElementById('valpr' + a).innerHTML = cart['pr' + a][0];
+    updateCart(cart);
+});
+    </script>
+  </body>
+</html>

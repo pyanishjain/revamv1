@@ -1,0 +1,27 @@
+{% extends 'Shop/Basic.html' %}
+
+
+
+{% block body %}
+  <div class="jumbotron">
+<button type="button" class="btn btn-danger"> FRUITS <svg class="bi bi-chevron-double-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L9.293 8 3.646 2.354a.5.5 0 010-.708z" clip-rule="evenodd"/>
+  <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L13.293 8 7.646 2.354a.5.5 0 010-.708z" clip-rule="evenodd"/>
+</svg></button>
+<div class="row row-cols-1 row-cols-md-3">
+    {% for i in all_fruits %}
+  <div class="col mb-4">
+    <div class="card h-100">
+      <img src="/media/{{ i.image }}" class="card-img-top" alt="...">
+           <button type="button" class="btn btn-primary" id="namepr{{ i.id }}">{{ i.product_name }}</button>
+           <div id="divpr{{ i.id }}" class="divpr" >
+           <button id="pr{{ i.id }}" class="btn btn-secondary cart">Buy</button><a class="prc" style="color: white">&#8377;<span id="pricepr{{ i.id }}">{{ i.price }}</span>/-</a>
+
+        </div>
+    </div>
+  </div>
+    {% endfor %}
+</div></div>
+
+
+{% endblock %}
